@@ -1,0 +1,78 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Modern design system tokens (light/dark). Adjust as needed. */
+:root {
+  --radius: 0.5rem;
+  --background: #f7f8fb;
+  --foreground: #0f1724;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --card-foreground: #0f1724;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --accent: #06b6d4;
+  --border: #e6e9ee;
+  --ring: rgba(99,102,241,0.2);
+  --input: #ffffff;
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.04);
+  --shadow-md: 0 6px 18px rgba(16,24,40,0.08);
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #e6eef8;
+  --muted: #9aa6bf;
+  --card: #0f1724;
+  --card-foreground: #e6eef8;
+  --primary: #7c84ff;
+  --primary-foreground: #0b1220;
+  --accent: #0fb5c9;
+  --border: rgba(255,255,255,0.06);
+  --ring: rgba(124,132,255,0.16);
+  --input: #0b1220;
+  --shadow-sm: 0 1px 2px rgba(2,6,23,0.6);
+  --shadow-md: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #__next {
+    height: 100%;
+  }
+
+  body {
+    @apply antialiased;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+
+  a {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .card {
+    background: var(--card);
+    color: var(--card-foreground);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius));
+    box-shadow: var(--shadow-sm);
+  }
+
+  .container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
